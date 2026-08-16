@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To do list</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .box {
+            width: 450px;
+            margin: auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #999;
+        }
+
+        h1 {
+            color: #2e7d32;
+        }
+
+        input {
+            width: 260px;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        #add {
+            padding: 10px 15px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            margin-top: 12px;
+            padding: 10px;
+            background-color: #f1f8e9;
+            border-radius: 6px;
+        }
+
+        .item span {
+            flex: 1;
+            text-align: left;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .complete {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .remove {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px;
+            margin-left: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>To do list</h1>
+
+        <input type="text" id="task" placeholder="Enter your task">
+
+        <button id="add">Add</button>
+
+        <p id="message">No tasks available.</p>
+
+        <div id="list"></div>
+
+    </div>
+
+
+    <script>
+
+        let input = document.getElementById("task");
+        let add = document.getElementById("add");
+        let list = document.getElementById("list");
+        let message = document.getElementById("message");
+
+
+        add.addEventListener("click", function() {
+
+            let value = input.value.trim();
+
+            if (value === "") {
+                alert("Enter a task first!");
+                return;
+            }
+
+            // Create task item
+            let item = document.createElement("div");
+            item.className = "item";
+
+            // Task name
+            let taskName = document.createElement("span");
+            taskName.innerText = value;
+
+            // Complete button
+            let complete = document.createElement("button");
+            complete.innerText = "Complete";
+            complete.className = "complete";
+
+            complete.onclick = function() {
+                taskName.classList.toggle("done");
+            };
+
+
+            // Delete button
+            let remove = document.createElement("button");
+            remove.innerText = "Delete";
+            remove.className = "remove";
+
+            remove.onclick = function() {
+                item.remove();
+
+                if (list.children.length === 0) {
+                    message.style.display = "block";
+                }
+            };
+
+
+            // Add elements
+            item.appendChild(taskName);
+            item.appendChild(complete);
+            item.appendChild(remove);
+
+            list.appendChild(item);
+
+            // Hide empty message
+            message.style.display = "none";
+
+            // Clear input
+            input.value = "";
+
+        });
+
+    </script>
+
+</body>
+</html>
