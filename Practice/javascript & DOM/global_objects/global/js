@@ -1,0 +1,15 @@
+global.x=5;
+ function show(){
+    console.log("X value is:",(global.x));
+ }
+ show();
+
+ global.s="sravya";
+ console.log("my name is:",s);
+
+ global.y=4;
+ function maths(){
+    z=x*y;
+    console.log("Z value is:",z);
+ }
+ maths();
