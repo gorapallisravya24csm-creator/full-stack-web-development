@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Advanced Dynamic Webpage</title>
+
+<style>
+
+    /* Complete webpage */
+    body {
+        margin: 0;
+
+        font-family:
+        Arial, sans-serif;
+
+        background-color:
+        #e5ecee;
+
+        color: #0b1101;
+
+        text-align: center;
+
+        transition: 0.5s;
+    }
+
+
+    /* Dark mode */
+    .dark-mode {
+        background-color:
+        #1e1e1e;
+
+        color: white;
+    }
+
+
+    /* Header */
+    header {
+        background:
+        linear-gradient(
+            to right,
+            #1565c0,
+            #8e24aa
+        );
+
+        color: white;
+
+        padding: 30px;
+
+        text-shadow:
+        2px 2px 4px black;
+    }
+
+
+    /* Digital clock */
+    #clock {
+        font-size: 22px;
+
+        font-weight: italic;
+
+        margin-top: 5px;
+    }
+
+
+    /* Navigation bar */
+    nav {
+        background-color:
+        #222;
+
+        padding: 15px;
+    }
+
+
+    /* Navigation links */
+    nav a {
+        color: white;
+
+        text-decoration: none;
+
+        margin: 15px;
+
+        padding: 8px 15px;
+
+        font-size: 18px;
+
+        border-radius: 5px;
+
+        transition: 0.3s;
+    }
+
+
+    /* Navigation hover effect */
+    nav a:hover {
+        background-color:
+        orange;
+
+        color: black;
+    }
+
+
+    /* Main container */
+    .container {
+        width: 80%;
+
+        margin:
+        40px auto;
+
+        background-color:
+        white;
+
+        color: black;
+
+        padding: 30px;
+
+        border-radius:
+        15px;
+
+        box-shadow:
+        5px 5px 15px gray;
+    }
+
+
+    /* Input field */
+    input {
+        width: 250px;
+
+        padding: 12px;
+
+        font-size: 16px;
+
+        border:
+        2px solid #1565c0;
+
+        border-radius:
+        8px;
+    }
+
+
+    /* Buttons */
+    button {
+        margin: 15px;
+
+        padding:
+        12px 25px;
+
+        font-size: 16px;
+
+        background-color:
+        #1565c0;
+
+        color: white;
+
+        border: none;
+
+        border-radius:
+        8px;
+
+        cursor: pointer;
+
+        box-shadow:
+        3px 3px 8px gray;
+
+        transition: 0.3s;
+    }
+
+
+    /* Button hover effect */
+    button:hover {
+        background-color:
+        green;
+
+        transform:
+        scale(1.05);
+    }
+
+
+    /* Dynamic message */
+    #message {
+        font-size: 22px;
+
+        color: #8e24aa;
+
+        font-weight: bold;
+    }
+
+
+    /* About section */
+    .about {
+        margin-top: 40px;
+
+        padding: 25px;
+
+        background-color:
+        #e3f2fd;
+
+        border-radius:
+        15px;
+    }
+
+
+    /* Card container */
+    .card-container {
+        display: flex;
+
+        justify-content:
+        center;
+
+        gap: 25px;
+
+        flex-wrap:
+        wrap;
+
+        margin-top:
+        30px;
+    }
+
+
+    /* Information cards */
+    .card {
+        width: 230px;
+
+        padding: 20px;
+
+        background-color:
+        white;
+
+        border:
+        2px solid #1565c0;
+
+        border-radius:
+        15px;
+
+        box-shadow:
+        5px 5px 15px gray;
+
+        transition:
+        0.3s;
+    }
+
+
+    /* Card hover effect */
+    .card:hover {
+        transform:
+        translateY(-10px);
+
+        background-color:
+        #e3f2fd;
+    }
+
+
+    /* Hidden information */
+    #moreInfo {
+        display: none;
+
+        margin-top:
+        25px;
+
+        padding:
+        20px;
+
+        background-color:
+        lightyellow;
+
+        border-radius:
+        10px;
+    }
+
+
+    /* Text area */
+    textarea {
+        width: 300px;
+
+        height: 100px;
+
+        padding: 10px;
+
+        font-size: 16px;
+
+        border:
+        2px solid #1565c0;
+
+        border-radius:
+        8px;
+    }
+
+
+    /* Footer */
+    footer {
+        background-color:
+        #222;
+
+        color: white;
+
+        padding: 20px;
+
+        margin-top: 50px;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- Header -->
+<header>
+
+    <h1>
+        Advanced Dynamic Webpage
+    </h1>
+
+    <p>
+        Developed Using HTML,
+        CSS and JavaScript
+    </p>
+
+    <!-- Digital clock -->
+    <div id="clock">
+
+    </div>
+
+</header>
+
+
+<!-- Navigation bar -->
+<nav>
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#about">
+        About
+    </a>
+
+    <a href="#courses">
+        Courses
+    </a>
+
+    <a href="#contact">
+        Contact
+    </a>
+
+</nav>
+
+
+<!-- Main content -->
+<main
+class="container"
+id="home">
+
+    <h2>
+        Welcome User
+    </h2>
+
+
+    <!-- Name input -->
+    <label for="username">
+
+        Enter Your Name:
+
+    </label>
+
+    <br><br>
+
+
+    <input
+        type="text"
+        id="username"
+        placeholder=
+        "Enter your name"
+    >
+
+    <br>
+
+
+    <!-- Welcome button -->
+    <button
+    onclick="showMessage()">
+
+        Submit
+
+    </button>
+
+
+    <!-- Dynamic message -->
+    <p id="message">
+
+        Enter your name
+        and click Submit.
+
+    </p>
+
+
+    <!-- Background button -->
+    <button
+    onclick="changeColor()">
+
+        Change Background
+
+    </button>
+
+
+    <!-- Dark mode button -->
+    <button
+    onclick="changeTheme()">
+
+        Dark / Light Mode
+
+    </button>
+
+
+    <!-- About section -->
+    <section
+    class="about"
+    id="about">
+
+        <h2>
+            About This Webpage
+        </h2>
+
+        <p>
+
+            This is a dynamic
+            webpage created using
+            HTML, CSS and
+            JavaScript.
+
+        </p>
+
+        <p>
+
+            JavaScript makes the
+            webpage interactive
+            by changing content,
+            colors and webpage
+            behavior.
+
+        </p>
+
+    </section>
+
+
+    <!-- Three information cards -->
+    <section id="courses">
+
+        <h2>
+            Web Technologies
+        </h2>
+
+
+        <div
+        class="card-container">
+
+
+            <!-- Card 1 -->
+            <div class="card">
+
+                <h2>
+                    HTML5
+                </h2>
+
+                <p>
+
+                    HTML5 creates
+                    the structure
+                    of a webpage.
+
+                </p>
+
+            </div>
+
+
+            <!-- Card 2 -->
+            <div class="card">
+
+                <h2>
+                    CSS3
+                </h2>
+
+                <p>
+
+                    CSS3 adds colors,
+                    fonts, borders,
+                    spacing and
+                    animations.
+
+                </p>
+
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="card">
+
+                <h2>
+                    JavaScript
+                </h2>
+
+                <p>
+
+                    JavaScript adds
+                    dynamic behavior
+                    and interaction.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Show or hide information -->
+    <button
+    onclick="showMoreInfo()">
+
+        Show / Hide More
+        Information
+
+    </button>
+
+
+    <div id="moreInfo">
+
+        <h3>
+            More Information
+        </h3>
+
+        <p>
+
+            A dynamic webpage can
+            respond to user clicks,
+            update text, change
+            styles and display
+            information without
+            reloading the webpage.
+
+        </p>
+
+    </div>
+
+
+    <!-- Character counter -->
+    <section
+    id="contact">
+
+        <h2>
+            Contact Message
+        </h2>
+
+
+        <textarea
+        id="userText"
+        oninput=
+        "countCharacters()"
+        placeholder=
+        "Type your message"
+        ></textarea>
+
+
+        <p>
+
+            Characters:
+
+            <span id="count">
+
+                0
+
+            </span>
+
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>
+
+        © 2026 Advanced
+        Dynamic Webpage
+
+    </p>
+
+    <p>
+
+        Developed using
+        HTML, CSS and
+        JavaScript
+
+    </p>
+
+</footer>
+
+
+<!-- JavaScript -->
+<script>
+
+    /* Display welcome message */
+
+    function showMessage() {
+
+        let name =
+        document
+        .getElementById(
+            "username"
+        )
+        .value;
+
+
+        if (
+            name === ""
+        ) {
+
+            document
+            .getElementById(
+                "message"
+            )
+            .innerHTML =
+            "Please enter " +
+            "your name.";
+
+        }
+
+        else {
+
+            document
+            .getElementById(
+                "message"
+            )
+            .innerHTML =
+            "Welcome, " +
+            name +
+            "!";
+
+        }
+
+    }
+
+
+    /* Change background */
+
+    function changeColor() {
+
+        let colors = [
+
+            "#dbeafe",
+
+            "#dcfce7",
+
+            "#fef3c7",
+
+            "#fce7f3"
+
+        ];
+
+
+        let randomNumber =
+        Math.floor(
+
+            Math.random()
+
+            *
+
+            colors.length
+
+        );
+
+
+        document
+        .body
+        .style
+        .backgroundColor =
+
+        colors[
+            randomNumber
+        ];
+
+    }
+
+
+    /* Dark and light mode */
+
+    function changeTheme() {
+
+        document
+        .body
+        .classList
+        .toggle(
+
+            "dark-mode"
+
+        );
+
+    }
+
+
+    /* Show or hide information */
+
+    function showMoreInfo() {
+
+        let information =
+
+        document
+        .getElementById(
+            "moreInfo"
+        );
+
+
+        if (
+
+            information
+            .style
+            .display
+            === "block"
+
+        ) {
+
+            information
+            .style
+            .display
+            = "none";
+
+        }
+
+        else {
+
+            information
+            .style
+            .display
+            = "block";
+
+        }
+
+    }
+
+
+    /* Count characters */
+
+    function countCharacters() {
+
+        let text =
+
+        document
+        .getElementById(
+            "userText"
+        )
+        .value;
+
+
+        document
+        .getElementById(
+            "count"
+        )
+        .innerHTML =
+
+        text.length;
+
+    }
+
+
+    /* Digital clock */
+
+    function displayClock() {
+
+        let currentTime =
+
+        new Date();
+
+
+        document
+        .getElementById(
+            "clock"
+        )
+        .innerHTML =
+
+        currentTime
+        .toLocaleTimeString();
+
+    }
+
+
+    /* Update clock */
+
+    setInterval(
+
+        displayClock,
+
+        1000
+
+    );
+
+
+    /* Display clock immediately */
+
+    displayClock();
+
+</script>
+
+</body>
+
+</html>
