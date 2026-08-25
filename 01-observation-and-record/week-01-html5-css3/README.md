@@ -3,7 +3,7 @@
 ## 📑 Basic Information
 
 - **Experiment No:** 01
-- **Date:** 25/08/2026
+- **Date:** /07/2026
 - **Title:** Creating a Responsive User Registration Form using HTML5 and CSS3
 
 ## 🎯 Objective / Aim
