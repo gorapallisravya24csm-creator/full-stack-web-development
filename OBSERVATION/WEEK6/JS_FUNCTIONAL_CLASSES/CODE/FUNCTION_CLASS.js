@@ -15,7 +15,7 @@ class Student {
     }
 }
 // Creating multiple objects
-const student1 = new Student("Samhavya", "CSM");
-const student2 = new Student("Anvitha", "CSD");
+const student1 = new Student("Sravya", "CSM");
+const student2 = new Student("sirisha", "CSD");
 student1.introduce();
 student2.introduce();
